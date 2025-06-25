@@ -58,3 +58,10 @@ class Player(ABC):
     def has_king(self, suit):
         return any(card.suit == suit and card.rank == 14 for card in self.hand)
 
+    def reset(self):
+        self.hand = []
+        self.won_cards = []
+        self.Fool = 0
+
+    def get_lowest_card(self):
+        return min(self.hands)

@@ -9,7 +9,7 @@ from .scores import Scores
 from .team import Team
 
 class TarotGame:
-    def __init__(self, players, dealer=0):
+    def __init__(self, players, deck, dealer=0):
         self.players = players
         self.num_players = len(players)
         self.team1 = Team("Attack")
@@ -19,7 +19,7 @@ class TarotGame:
         names = [player.name for player in players]
         if len(set(names)) != len(names):
             raise ValueError("Player names must be unique.")
-        self.deck = Deck()
+        self.deck = deck
         self.dealer = 0
         self.chien = []
         self.dealer = players[dealer].name
@@ -37,11 +37,6 @@ class TarotGame:
         hands, self.chien = self.deck.deal(len(self.players))
         for player, hand in zip(self.players, hands):
             player.receive_hand(hand)
-        print(f"Chien cards: {self.chien}")
-        print(f"Dealer: {self.dealer}")
-        print("Initial hands:")
-        for player in self.players:
-            print(f"{player.name}: {player.hand}")
 
 
     def finalize(self):
@@ -56,39 +51,33 @@ class TarotGame:
         for player in self.players:
             tot += Scores.calculate_player_score(player)
             print(f"{player.name} score: {Scores.calculate_player_score(player)}")
+            print(f"{player.name} won cards: {len(player.won_cards)}")
 
-        print(f"Total score: {tot}")
-
-        if self.num_players ==  5:
-            print(self.team1)
-            print(self.team2)
-            team1_score = sum(Scores.calculate_player_score(player) for player in self.team1)
-            team2_score = sum(Scores.calculate_player_score(player) for player in self.team2)
-            print(f"Team 1 score: {team1_score}")
-            print(f"Team 2 score: {team2_score}")
-            print(f"Noudlers team1: {self.team1.GetNoudlers()}")
-            print(f"Noudlers team2: {self.team2.GetNoudlers()}")
+        # if self.num_players ==  5:
+        #     print(self.team1)
+        #     print(self.team2)
+        #     team1_score = sum(Scores.calculate_player_score(player) for player in self.team1)
+        #     team2_score = sum(Scores.calculate_player_score(player) for player in self.team2)
+        #     print(f"Team 1 score: {team1_score}")
+        #     print(f"Team 2 score: {team2_score}")
+        #     print(f"Noudlers team1: {self.team1.GetNoudlers()}")
+        #     print(f"Noudlers team2: {self.team2.GetNoudlers()}")
         
     def call(self):
         print("Calling suit for the taker...")
         called_suit = self.taker.call_king()
         print(f"Called suit: {called_suit}")
         self.team1.add_player(self.taker)
-        print(self.taker)
-        print(id(self.team1))
-        print(id(self.team2))
         for player in self.players:
             if player.has_king(called_suit):
-                print("Ok")
                 if player != self.taker:
                     self.team1.add_player(player)
-                    print(self.team1)
-                    print(self.team2)
             else:
                 if player != self.taker:
                     self.team2.add_player(player)
-                    print(self.team2)
-                    print(self.team1)
+
+        print(f"Team 1: {self.team1}")
+        print(f"Team 2: {self.team2}")
 
 
     def bidding_phase(self):
@@ -98,7 +87,8 @@ class TarotGame:
             if bid > current_highest_bid:
                 current_highest_bid = bid
                 self.taker = player
-        self.taker.receive_chien(self.chien)
+        if self.taker:
+            self.taker.receive_chien(self.chien)
         return current_highest_bid
     
     def discard_phase(self):
@@ -112,7 +102,6 @@ class TarotGame:
             played_card = player.play_card(legal_cards)
             self.trick[player.name] = played_card
         self.history.append(self.trick)
-        # print(self.leading)
         winning_player_name, _ = RuleEngine.trick_winner(self.trick, self.leading)
         winning_player = self.players[self.get_player_index(winning_player_name)]
         self.leading = winning_player.name
@@ -133,19 +122,27 @@ class TarotGame:
     def play_game(self):
         self.initialize()
         self.bidding_phase()
+        if not self.taker:
+            print("No taker was selected. Ending game.")
+            self.finalize()
+            return 
         if self.num_players == 5:
             self.call()
         self.discard_phase()
-
+        k=0
         while len(self.players[0].hand) > 0:
             self.play_trick()
-            # print(f"Trick played: {self.trick}")
-            # print(f"Winning player: {self.leading}")
-            # print("Number of tricks played:", len(self.history))
-            # print("Current hands:")
-            # for player in self.players:
-            #     print(f"{player.name}: {player.hand}")  
         
         self.finalize()
+
+    def get_deck_from_tricks(self):
+        """Extract all cards played in tricks to form a new deck."""
+        deck = Deck()
+        print(len(deck))
+        for player in self.players:
+            for card in player.won_cards:
+                deck.add_card(card)
+        print("Deck extracted with:", len(deck.cards), "cards.")
+        return deck
 
         

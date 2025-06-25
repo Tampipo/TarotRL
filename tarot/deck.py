@@ -6,7 +6,6 @@ from .card import Card, Suit
 class Deck:
     def __init__(self):
         self.cards = []
-        self.index = 0  # Pointer to top of deck
 
     def _create_deck(self):
         cards = []
@@ -24,13 +23,11 @@ class Deck:
         if seed is not None:
             random.seed(seed)
         random.shuffle(self.cards)
-        self.index = 0
 
     def cut(self, num_players):
         """Simulate cutting the remaining deck."""
         cut_point = random.randint(num_players, len(self.cards) - num_players)
         self.cards = self.cards[cut_point:] + self.cards[:cut_point]
-        self.index = 0
 
     def deal(self, num_players=4):
         """Deal one game with proper cut and randomly assigned chien cards."""
@@ -77,3 +74,7 @@ class Deck:
 
     def __len__(self):
         return len(self.cards)
+    
+    def add_card(self, card):
+        """Add a card to the deck."""
+        self.cards.append(card)
