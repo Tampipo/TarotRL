@@ -5,11 +5,15 @@ from .player import Player
 from .rules import RuleEngine
 from .bid import Bid
 from .card import Suit
+from .scores import Scores
+from .team import Team
 
 class TarotGame:
     def __init__(self, players, dealer=0):
         self.players = players
         self.num_players = len(players)
+        self.team1 = Team("Attack")
+        self.team2 = Team("Defense")
         if self.num_players not in [3, 4, 5]:
             raise ValueError("Only 3, 4, or 5 players are supported.")
         names = [player.name for player in players]
@@ -38,7 +42,54 @@ class TarotGame:
         print("Initial hands:")
         for player in self.players:
             print(f"{player.name}: {player.hand}")
-    
+
+
+    def finalize(self):
+        # Check for fool exchanges required
+        fool_needed = [player for player in self.players if player.Fool == 1 ]
+        fool_return =  [player for player in self.players if player.Fool == -1]
+        if len(fool_needed) > 1 or len(fool_return) > 1:
+            raise ValueError("Invalid Fool exchange state at game end.")
+        if len(fool_needed) == 1 and len(fool_return) == 1:
+            fool_needed[0].give_fool_card(fool_return[0])
+        tot = 0
+        for player in self.players:
+            tot += Scores.calculate_player_score(player)
+            print(f"{player.name} score: {Scores.calculate_player_score(player)}")
+
+        print(f"Total score: {tot}")
+
+        if self.num_players ==  5:
+            print(self.team1)
+            print(self.team2)
+            team1_score = sum(Scores.calculate_player_score(player) for player in self.team1)
+            team2_score = sum(Scores.calculate_player_score(player) for player in self.team2)
+            print(f"Team 1 score: {team1_score}")
+            print(f"Team 2 score: {team2_score}")
+            print(f"Noudlers team1: {self.team1.GetNoudlers()}")
+            print(f"Noudlers team2: {self.team2.GetNoudlers()}")
+        
+    def call(self):
+        print("Calling suit for the taker...")
+        called_suit = self.taker.call_king()
+        print(f"Called suit: {called_suit}")
+        self.team1.add_player(self.taker)
+        print(self.taker)
+        print(id(self.team1))
+        print(id(self.team2))
+        for player in self.players:
+            if player.has_king(called_suit):
+                print("Ok")
+                if player != self.taker:
+                    self.team1.add_player(player)
+                    print(self.team1)
+                    print(self.team2)
+            else:
+                if player != self.taker:
+                    self.team2.add_player(player)
+                    print(self.team2)
+                    print(self.team1)
+
 
     def bidding_phase(self):
         current_highest_bid = Bid.PASS
@@ -61,7 +112,7 @@ class TarotGame:
             played_card = player.play_card(legal_cards)
             self.trick[player.name] = played_card
         self.history.append(self.trick)
-        print(self.leading)
+        # print(self.leading)
         winning_player_name, _ = RuleEngine.trick_winner(self.trick, self.leading)
         winning_player = self.players[self.get_player_index(winning_player_name)]
         self.leading = winning_player.name
@@ -70,7 +121,7 @@ class TarotGame:
                 winning_player.win_card(card)
             else:
                 self.players[self.get_player_index(key)].win_card(card)
-                # Need to implement method to give another card than the fool
+                self.players[self.get_player_index(key)].give_fool_card(winning_player)
 
     def get_player_index(self, player_name):
         for i, player in enumerate(self.players):
@@ -82,15 +133,19 @@ class TarotGame:
     def play_game(self):
         self.initialize()
         self.bidding_phase()
+        if self.num_players == 5:
+            self.call()
         self.discard_phase()
 
         while len(self.players[0].hand) > 0:
             self.play_trick()
-            print(f"Trick played: {self.trick}")
-            print(f"Winning player: {self.leading}")
-            print("Number of tricks played:", len(self.history))
-            print("Current hands:")
-            for player in self.players:
-                print(f"{player.name}: {player.hand}")  
+            # print(f"Trick played: {self.trick}")
+            # print(f"Winning player: {self.leading}")
+            # print("Number of tricks played:", len(self.history))
+            # print("Current hands:")
+            # for player in self.players:
+            #     print(f"{player.name}: {player.hand}")  
+        
+        self.finalize()
 
         

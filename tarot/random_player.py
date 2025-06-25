@@ -19,9 +19,15 @@ class RandomPlayer(Player):
             if RuleEngine.is_valid_discard(self.hand, discard):
                 for card in discard:
                     self.hand.remove(card)
+                self.won_cards.extend(discard)
                 return discard
 
     def play_card(self, legal_cards):
         played_card = random.choice(legal_cards)
         self.hand.remove(played_card)
         return played_card
+
+
+    def call_king(self):
+        suits = [Suit.HEARTS, Suit.DIAMONDS, Suit.CLUBS, Suit.SPADES]
+        return random.choice(suits)

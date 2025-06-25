@@ -32,3 +32,7 @@ class Card:
     def __str__(self):
         # e.g., "11 of Hearts" or "1 of Trump"
         return f"{self.rank} of {self.suit.name.capitalize()}"
+    
+    def is_low(self):
+        # Low cards are 1-10 for suits
+        return self.rank <= 10 and self.suit in {Suit.HEARTS, Suit.DIAMONDS, Suit.CLUBS, Suit.SPADES}
