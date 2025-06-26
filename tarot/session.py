@@ -6,6 +6,7 @@ class TarotSession:
     def __init__(self, players, ngames=5):
         self.players = players
         self.deck = Deck()
+        self.dealer = 0  # Default dealer index, can be changed later
         self.ngames = ngames
         self.current_game = 0
         self.games = []
@@ -26,10 +27,11 @@ class TarotSession:
 
     
     def play_game(self):
-        new_game = TarotGame(self.players, self.deck)
+        new_game = TarotGame(self.players, self.deck, dealer=self.dealer)
         new_game.play_game()
         self.games.append(new_game)
         self.current_game += 1
+        self.dealer = (self.dealer + 1) % len(self.players)
         print(f"Game {self.current_game} played. Current scores: {self.scores}")
 
     def run(self):

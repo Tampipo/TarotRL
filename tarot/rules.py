@@ -3,15 +3,14 @@ from .card import Suit
 
 class RuleEngine:
     @staticmethod    
-    def legal_moves(player_hand, trick_so_far):
+    def legal_moves(player_hand, trick_so_far, leading_player_name):
         # Find all Fool cards in hand (adjust attribute as needed)
         fools = [c for c in player_hand if c.suit == Suit.FOOL]  
-
-        if not trick_so_far:
+        if list(trick_so_far.values()) == []:
             # At start of trick, all cards including fool are legal
             return player_hand
 
-        lead_card = trick_so_far[0]
+        lead_card = trick_so_far[leading_player_name]
         lead_suit = lead_card.suit
 
         trumps = [c for c in player_hand if c.suit == Suit.TRUMP]
@@ -20,7 +19,7 @@ class RuleEngine:
         if follow_suit:
             legal = follow_suit
         elif trumps:
-            trumps_in_trick = [c for c in trick_so_far if c.suit == Suit.TRUMP]
+            trumps_in_trick = [c for c in list(trick_so_far.values()) if c.suit == Suit.TRUMP]
             if trumps_in_trick:
                 highest_trump = max(c.rank for c in trumps_in_trick)
                 overtrump = [c for c in trumps if c.rank > highest_trump]

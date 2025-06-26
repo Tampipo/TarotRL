@@ -20,14 +20,13 @@ class TarotGame:
         if len(set(names)) != len(names):
             raise ValueError("Player names must be unique.")
         self.deck = deck
-        self.dealer = 0
         self.chien = []
-        self.dealer = players[dealer].name
+        self.dealer = self.players[dealer]
         self.taker = None
         self.discard = []
         self.trick = []
         self.history = []
-        self.leading = self.players[0].name
+        self.leading = self.players[(dealer + 1) % self.num_players].name
         self.rule_engine = RuleEngine()
         print(f"Starting Tarot game with players: {[player.name for player in players]}")
     
@@ -81,8 +80,10 @@ class TarotGame:
 
 
     def bidding_phase(self):
+        index = self.players.index(self.dealer)
+        bidding_order = self.players[index:] + self.players[:index]
         current_highest_bid = Bid.PASS
-        for player in self.players:
+        for player in bidding_order:
             bid = player.make_bid(current_highest_bid)
             if bid > current_highest_bid:
                 current_highest_bid = bid
@@ -97,8 +98,9 @@ class TarotGame:
 
     def play_trick(self):
         self.trick = {}
-        for player in self.players:
-            legal_cards = self.rule_engine.legal_moves(player.hand, list(self.trick.values()))
+        players_order = self.players[self.get_player_index(self.leading):] + self.players[:self.get_player_index(self.leading)]
+        for player in players_order:
+            legal_cards = self.rule_engine.legal_moves(player.hand, self.trick, self.leading)
             played_card = player.play_card(legal_cards)
             self.trick[player.name] = played_card
         self.history.append(self.trick)
