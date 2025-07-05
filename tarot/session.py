@@ -28,7 +28,13 @@ class TarotSession:
     
     def play_game(self):
         new_game = TarotGame(self.players, self.deck, dealer=self.dealer)
-        new_game.play_game()
+        final_score = new_game.play_game()
+        if final_score:
+            for player in new_game.team1:
+                self.scores[player.name] += final_score
+            for player in new_game.team2:
+                self.scores[player.name] -= final_score
+
         self.games.append(new_game)
         self.current_game += 1
         self.dealer = (self.dealer + 1) % len(self.players)

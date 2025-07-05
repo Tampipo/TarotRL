@@ -26,8 +26,9 @@ def test_card_creation():
 def test_play_game():
     from .game import TarotGame
     from .random_player import RandomPlayer
+    from .deck import Deck
 
     players = [RandomPlayer(f"Player {i}") for i in range(4)]
-    print(players)
-    game = TarotGame(players)
+    deck = Deck()
+    game = TarotGame(players, deck)
     game.play_game()

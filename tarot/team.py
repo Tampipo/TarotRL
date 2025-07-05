@@ -14,6 +14,11 @@ class Team:
                     noudlers += 1
         return noudlers
 
+    def get_player(self, idx):
+        if 0 <= idx < len(self.players):
+            return self.players[idx]
+        raise IndexError("Player index out of range")
+
     def __iter__(self):
         return iter(self.players)
     
