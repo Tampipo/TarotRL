@@ -83,7 +83,11 @@ class RuleEngine:
                     winning_card = value
                     winning_player = key
             elif value.suit == Suit.TRUMP:
-                if value.rank > winning_card.rank:
+                if winning_card.suit == Suit.TRUMP:
+                    if value.rank > winning_card.rank:
+                        winning_card = value
+                        winning_player = key
+                else:
                     winning_card = value
                     winning_player = key
         return winning_player, winning_card

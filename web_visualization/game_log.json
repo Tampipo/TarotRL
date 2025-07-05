@@ -1,5 +1,5 @@
 {
-    "game_id": "6a4e40a7-8252-4b15-92fc-b4f039186c6c",
+    "game_id": "71df3c7e-a5d1-4b0e-8723-47734fe7e7a9",
     "players": [
         {
             "name": "Player 0",
@@ -21,123 +21,123 @@
     "dealer": "Player 0",
     "initial_hands": {
         "Player 0": [
-            "7 of Trump",
-            "13 of Spades",
-            "6 of Spades",
-            "20 of Trump",
-            "8 of Diamonds",
             "0 of Fool",
-            "2 of Trump",
-            "6 of Clubs",
-            "11 of Trump",
+            "9 of Hearts",
             "7 of Spades",
-            "14 of Spades",
-            "12 of Hearts",
-            "11 of Hearts",
-            "5 of Hearts",
-            "7 of Clubs",
-            "2 of Spades",
-            "9 of Clubs",
-            "2 of Clubs"
-        ],
-        "Player 1": [
-            "1 of Clubs",
-            "4 of Clubs",
-            "8 of Trump",
-            "14 of Trump",
-            "3 of Spades",
-            "5 of Diamonds",
-            "7 of Hearts",
-            "10 of Diamonds",
-            "18 of Trump",
-            "8 of Clubs",
-            "2 of Hearts",
-            "4 of Trump",
-            "1 of Hearts",
-            "17 of Trump",
-            "19 of Trump",
-            "2 of Diamonds",
-            "10 of Spades",
-            "1 of Trump"
-        ],
-        "Player 2": [
-            "1 of Spades",
-            "12 of Trump",
+            "5 of Trump",
             "13 of Trump",
             "13 of Hearts",
-            "13 of Clubs",
-            "12 of Clubs",
-            "5 of Trump",
-            "21 of Trump",
-            "13 of Diamonds",
+            "10 of Spades",
+            "6 of Clubs",
+            "3 of Clubs",
+            "1 of Trump",
+            "5 of Clubs",
+            "9 of Clubs",
+            "2 of Diamonds",
+            "5 of Diamonds",
+            "4 of Clubs",
+            "3 of Spades",
+            "2 of Hearts",
+            "14 of Diamonds"
+        ],
+        "Player 1": [
+            "14 of Spades",
             "10 of Hearts",
-            "14 of Hearts",
-            "11 of Spades",
-            "4 of Diamonds",
-            "11 of Clubs",
-            "14 of Clubs",
+            "13 of Spades",
+            "8 of Trump",
+            "2 of Spades",
+            "9 of Spades",
             "4 of Spades",
+            "12 of Diamonds",
+            "6 of Spades",
+            "7 of Diamonds",
+            "14 of Trump",
+            "8 of Hearts",
+            "1 of Clubs",
+            "10 of Clubs",
+            "12 of Spades",
+            "5 of Hearts",
             "10 of Trump",
-            "8 of Spades"
+            "21 of Trump"
+        ],
+        "Player 2": [
+            "4 of Trump",
+            "5 of Spades",
+            "11 of Clubs",
+            "2 of Trump",
+            "6 of Diamonds",
+            "19 of Trump",
+            "14 of Hearts",
+            "3 of Diamonds",
+            "12 of Trump",
+            "8 of Spades",
+            "17 of Trump",
+            "20 of Trump",
+            "12 of Hearts",
+            "8 of Diamonds",
+            "12 of Clubs",
+            "18 of Trump",
+            "3 of Trump",
+            "6 of Trump"
         ],
         "Player 3": [
-            "9 of Spades",
-            "10 of Clubs",
-            "11 of Diamonds",
-            "5 of Spades",
-            "6 of Trump",
-            "3 of Hearts",
-            "12 of Spades",
-            "12 of Diamonds",
-            "9 of Hearts",
-            "14 of Diamonds",
+            "11 of Hearts",
+            "7 of Clubs",
+            "9 of Diamonds",
+            "13 of Diamonds",
+            "14 of Clubs",
+            "1 of Hearts",
             "16 of Trump",
-            "9 of Trump",
-            "4 of Hearts",
-            "8 of Hearts",
-            "5 of Clubs",
-            "1 of Diamonds",
+            "13 of Clubs",
+            "8 of Clubs",
             "6 of Hearts",
-            "15 of Trump"
+            "3 of Hearts",
+            "7 of Hearts",
+            "9 of Trump",
+            "1 of Spades",
+            "2 of Clubs",
+            "7 of Trump",
+            "10 of Diamonds",
+            "11 of Trump"
         ]
     },
     "bid_phase": {
         "bids": [
             {
                 "player": "Player 0",
-                "bid": "Pass"
+                "bid": "Garde"
             },
             {
                 "player": "Player 1",
-                "bid": "Garde"
+                "bid": "Pass"
             },
             {
                 "player": "Player 2",
-                "bid": "Garde"
+                "bid": "Petite"
             },
             {
                 "player": "Player 3",
                 "bid": "Pass"
             }
         ],
-        "taker": "Player 1",
+        "taker": "Player 0",
         "final_bid": "Garde"
     },
     "chien": [
-        "3 of Diamonds",
-        "6 of Diamonds",
-        "3 of Clubs",
-        "9 of Diamonds",
-        "3 of Trump",
-        "7 of Diamonds"
+        "15 of Trump",
+        "11 of Spades",
+        "4 of Diamonds",
+        "1 of Diamonds",
+        "11 of Diamonds",
+        "4 of Hearts"
     ],
     "discard_phase": {
         "taker_discarded_cards": [
-            "3 of Diamonds",
+            "11 of Spades",
+            "9 of Hearts",
+            "3 of Clubs",
+            "1 of Diamonds",
             "4 of Clubs",
-            "9 of Diamonds",
-            "3 of Spades",
-            "10 of Spades",
             "5 of Diamonds"
         ]
     },
@@ -148,15 +148,15 @@
             "cards_played": [
                 {
                     "player": "Player 1",
-                    "card": "8 of Trump"
+                    "card": "2 of Spades"
                 },
                 {
                     "player": "Player 2",
-                    "card": "13 of Trump"
+                    "card": "8 of Spades"
                 },
                 {
                     "player": "Player 3",
-                    "card": "9 of Trump"
+                    "card": "1 of Spades"
                 },
                 {
                     "player": "Player 0",
@@ -171,11 +171,11 @@
             "cards_played": [
                 {
                     "player": "Player 2",
-                    "card": "13 of Clubs"
+                    "card": "11 of Clubs"
                 },
                 {
                     "player": "Player 3",
-                    "card": "10 of Clubs"
+                    "card": "8 of Clubs"
                 },
                 {
                     "player": "Player 0",
@@ -183,7 +183,7 @@
                 },
                 {
                     "player": "Player 1",
-                    "card": "8 of Clubs"
+                    "card": "1 of Clubs"
                 }
             ],
             "winner": "Player 2"
@@ -194,76 +194,53 @@
             "cards_played": [
                 {
                     "player": "Player 2",
-                    "card": "12 of Clubs"
+                    "card": "17 of Trump"
                 },
                 {
                     "player": "Player 3",
-                    "card": "5 of Clubs"
+                    "card": "9 of Trump"
                 },
                 {
                     "player": "Player 0",
-                    "card": "7 of Clubs"
+                    "card": "13 of Trump"
                 },
                 {
                     "player": "Player 1",
-                    "card": "1 of Clubs"
-                }
-            ],
-            "winner": "Player 2"
-        },
-        {
-            "trick_number": 4,
-            "leading_player": "Player 2",
-            "cards_played": [
-                {
-                    "player": "Player 2",
-                    "card": "4 of Spades"
-                },
-                {
-                    "player": "Player 3",
-                    "card": "9 of Spades"
-                },
-                {
-                    "player": "Player 0",
-                    "card": "14 of Spades"
-                },
-                {
-                    "player": "Player 1",
-                    "card": "19 of Trump"
+                    "card": "21 of Trump"
                 }
             ],
             "winner": "Player 1"
         },
         {
-            "trick_number": 5,
+            "trick_number": 4,
             "leading_player": "Player 1",
             "cards_played": [
                 {
                     "player": "Player 1",
-                    "card": "10 of Diamonds"
+                    "card": "10 of Trump"
                 },
                 {
                     "player": "Player 2",
-                    "card": "13 of Diamonds"
+                    "card": "18 of Trump"
                 },
                 {
                     "player": "Player 3",
-                    "card": "11 of Diamonds"
+                    "card": "11 of Trump"
                 },
                 {
                     "player": "Player 0",
-                    "card": "8 of Diamonds"
+                    "card": "15 of Trump"
                 }
             ],
             "winner": "Player 2"
         },
         {
-            "trick_number": 6,
+            "trick_number": 5,
             "leading_player": "Player 2",
             "cards_played": [
                 {
                     "player": "Player 2",
-                    "card": "5 of Trump"
+                    "card": "5 of Spades"
                 },
                 {
                     "player": "Player 3",
@@ -271,76 +248,76 @@
                 },
                 {
                     "player": "Player 0",
-                    "card": "20 of Trump"
+                    "card": "3 of Spades"
                 },
                 {
                     "player": "Player 1",
-                    "card": "1 of Trump"
-                }
-            ],
-            "winner": "Player 0"
-        },
-        {
-            "trick_number": 7,
-            "leading_player": "Player 0",
-            "cards_played": [
-                {
-                    "player": "Player 0",
-                    "card": "6 of Spades"
-                },
-                {
-                    "player": "Player 1",
-                    "card": "17 of Trump"
-                },
-                {
-                    "player": "Player 2",
-                    "card": "1 of Spades"
-                },
-                {
-                    "player": "Player 3",
                     "card": "12 of Spades"
                 }
             ],
-            "winner": "Player 1"
+            "winner": "Player 3"
         },
         {
-            "trick_number": 8,
-            "leading_player": "Player 1",
+            "trick_number": 6,
+            "leading_player": "Player 3",
             "cards_played": [
                 {
-                    "player": "Player 1",
-                    "card": "3 of Trump"
-                },
-                {
-                    "player": "Player 2",
-                    "card": "21 of Trump"
-                },
-                {
                     "player": "Player 3",
-                    "card": "6 of Trump"
+                    "card": "6 of Hearts"
                 },
                 {
                     "player": "Player 0",
-                    "card": "7 of Trump"
+                    "card": "13 of Hearts"
+                },
+                {
+                    "player": "Player 1",
+                    "card": "10 of Hearts"
+                },
+                {
+                    "player": "Player 2",
+                    "card": "14 of Hearts"
                 }
             ],
             "winner": "Player 2"
         },
         {
-            "trick_number": 9,
+            "trick_number": 7,
             "leading_player": "Player 2",
             "cards_played": [
                 {
                     "player": "Player 2",
-                    "card": "11 of Spades"
+                    "card": "19 of Trump"
                 },
                 {
                     "player": "Player 3",
-                    "card": "5 of Spades"
+                    "card": "7 of Trump"
                 },
                 {
                     "player": "Player 0",
-                    "card": "13 of Spades"
+                    "card": "5 of Trump"
+                },
+                {
+                    "player": "Player 1",
+                    "card": "8 of Trump"
+                }
+            ],
+            "winner": "Player 2"
+        },
+        {
+            "trick_number": 8,
+            "leading_player": "Player 2",
+            "cards_played": [
+                {
+                    "player": "Player 2",
+                    "card": "6 of Trump"
+                },
+                {
+                    "player": "Player 3",
+                    "card": "9 of Diamonds"
+                },
+                {
+                    "player": "Player 0",
+                    "card": "1 of Trump"
                 },
                 {
                     "player": "Player 1",
@@ -350,12 +327,12 @@
             "winner": "Player 1"
         },
         {
-            "trick_number": 10,
+            "trick_number": 9,
             "leading_player": "Player 1",
             "cards_played": [
                 {
                     "player": "Player 1",
-                    "card": "18 of Trump"
+                    "card": "4 of Spades"
                 },
                 {
                     "player": "Player 2",
@@ -363,57 +340,80 @@
                 },
                 {
                     "player": "Player 3",
-                    "card": "15 of Trump"
+                    "card": "10 of Diamonds"
                 },
                 {
                     "player": "Player 0",
-                    "card": "11 of Trump"
+                    "card": "10 of Spades"
                 }
             ],
-            "winner": "Player 1"
+            "winner": "Player 2"
+        },
+        {
+            "trick_number": 10,
+            "leading_player": "Player 2",
+            "cards_played": [
+                {
+                    "player": "Player 2",
+                    "card": "12 of Clubs"
+                },
+                {
+                    "player": "Player 3",
+                    "card": "13 of Clubs"
+                },
+                {
+                    "player": "Player 0",
+                    "card": "5 of Clubs"
+                },
+                {
+                    "player": "Player 1",
+                    "card": "10 of Clubs"
+                }
+            ],
+            "winner": "Player 3"
         },
         {
             "trick_number": 11,
-            "leading_player": "Player 1",
+            "leading_player": "Player 3",
             "cards_played": [
+                {
+                    "player": "Player 3",
+                    "card": "2 of Clubs"
+                },
+                {
+                    "player": "Player 0",
+                    "card": "9 of Clubs"
+                },
                 {
                     "player": "Player 1",
                     "card": "7 of Diamonds"
                 },
                 {
                     "player": "Player 2",
-                    "card": "4 of Diamonds"
-                },
-                {
-                    "player": "Player 3",
-                    "card": "12 of Diamonds"
-                },
-                {
-                    "player": "Player 0",
-                    "card": "2 of Trump"
+                    "card": "20 of Trump"
                 }
             ],
-            "winner": "Player 3"
+            "winner": "Player 2"
         },
         {
             "trick_number": 12,
-            "leading_player": "Player 3",
+            "leading_player": "Player 2",
             "cards_played": [
                 {
+                    "player": "Player 2",
+                    "card": "2 of Trump"
+                },
+                {
                     "player": "Player 3",
-                    "card": "3 of Hearts"
+                    "card": "7 of Clubs"
                 },
                 {
                     "player": "Player 0",
-                    "card": "5 of Hearts"
+                    "card": "14 of Diamonds"
                 },
                 {
                     "player": "Player 1",
-                    "card": "1 of Hearts"
-                },
-                {
-                    "player": "Player 2",
-                    "card": "13 of Hearts"
+                    "card": "6 of Spades"
                 }
             ],
             "winner": "Player 2"
@@ -424,19 +424,19 @@
             "cards_played": [
                 {
                     "player": "Player 2",
-                    "card": "11 of Clubs"
+                    "card": "4 of Trump"
                 },
                 {
                     "player": "Player 3",
-                    "card": "14 of Diamonds"
+                    "card": "3 of Hearts"
                 },
                 {
                     "player": "Player 0",
-                    "card": "9 of Clubs"
+                    "card": "2 of Diamonds"
                 },
                 {
                     "player": "Player 1",
-                    "card": "3 of Clubs"
+                    "card": "13 of Spades"
                 }
             ],
             "winner": "Player 2"
@@ -447,65 +447,65 @@
             "cards_played": [
                 {
                     "player": "Player 2",
-                    "card": "10 of Hearts"
+                    "card": "3 of Diamonds"
                 },
                 {
                     "player": "Player 3",
-                    "card": "6 of Hearts"
+                    "card": "13 of Diamonds"
                 },
                 {
                     "player": "Player 0",
-                    "card": "11 of Hearts"
+                    "card": "4 of Diamonds"
                 },
                 {
                     "player": "Player 1",
-                    "card": "2 of Hearts"
+                    "card": "12 of Diamonds"
                 }
             ],
-            "winner": "Player 0"
+            "winner": "Player 3"
         },
         {
             "trick_number": 15,
-            "leading_player": "Player 0",
+            "leading_player": "Player 3",
             "cards_played": [
                 {
+                    "player": "Player 3",
+                    "card": "11 of Hearts"
+                },
+                {
                     "player": "Player 0",
-                    "card": "2 of Spades"
+                    "card": "2 of Hearts"
                 },
                 {
                     "player": "Player 1",
-                    "card": "4 of Trump"
+                    "card": "8 of Hearts"
                 },
                 {
                     "player": "Player 2",
-                    "card": "8 of Spades"
-                },
-                {
-                    "player": "Player 3",
-                    "card": "8 of Hearts"
+                    "card": "12 of Hearts"
                 }
             ],
-            "winner": "Player 1"
+            "winner": "Player 2"
         },
         {
             "trick_number": 16,
-            "leading_player": "Player 1",
+            "leading_player": "Player 2",
             "cards_played": [
                 {
-                    "player": "Player 1",
-                    "card": "6 of Diamonds"
-                },
-                {
                     "player": "Player 2",
-                    "card": "10 of Trump"
+                    "card": "3 of Trump"
                 },
                 {
                     "player": "Player 3",
-                    "card": "1 of Diamonds"
+                    "card": "1 of Hearts"
                 },
                 {
                     "player": "Player 0",
-                    "card": "7 of Spades"
+                    "card": "11 of Diamonds"
+                },
+                {
+                    "player": "Player 1",
+                    "card": "9 of Spades"
                 }
             ],
             "winner": "Player 2"
@@ -516,19 +516,19 @@
             "cards_played": [
                 {
                     "player": "Player 2",
-                    "card": "14 of Hearts"
+                    "card": "6 of Diamonds"
                 },
                 {
                     "player": "Player 3",
-                    "card": "4 of Hearts"
+                    "card": "7 of Hearts"
                 },
                 {
                     "player": "Player 0",
-                    "card": "12 of Hearts"
+                    "card": "7 of Spades"
                 },
                 {
                     "player": "Player 1",
-                    "card": "7 of Hearts"
+                    "card": "14 of Spades"
                 }
             ],
             "winner": "Player 2"
@@ -539,19 +539,19 @@
             "cards_played": [
                 {
                     "player": "Player 2",
-                    "card": "14 of Clubs"
+                    "card": "8 of Diamonds"
                 },
                 {
                     "player": "Player 3",
-                    "card": "9 of Hearts"
+                    "card": "14 of Clubs"
                 },
                 {
                     "player": "Player 0",
-                    "card": "2 of Clubs"
+                    "card": "4 of Hearts"
                 },
                 {
                     "player": "Player 1",
-                    "card": "2 of Diamonds"
+                    "card": "5 of Hearts"
                 }
             ],
             "winner": "Player 2"
