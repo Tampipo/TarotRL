@@ -17,6 +17,9 @@ class Player(ABC):
     def win_card(self, card):
         self.won_cards.append(card)
 
+    def win_cards(self, cards):
+        self.won_cards.extend(cards)
+
     @abstractmethod
     def make_bid(self, current_highest_bid):
         pass

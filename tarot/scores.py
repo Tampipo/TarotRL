@@ -24,6 +24,7 @@ class Scores:
             score += Scores.calculate_score_card(card)
         return score
     
+    @staticmethod
     def calculate_score_card(card):
         """
         Calculate the score for a single card based on its type.
@@ -41,7 +42,7 @@ class Scores:
         elif card.rank == 14:
             return 4.5
         else:
-            return 0
+            return 0.5
         
     def calculate_team_score(team):
         """
