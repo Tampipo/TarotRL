@@ -73,6 +73,12 @@
     <button onclick="toggleGameInfo()">Toggle Game Setup Info</button>
     <div id="game-info" class="hidden"></div>
 
+    <div id="game-navigation" style="display: none;">
+        <button onclick="prevGame()">Previous Game</button>
+        <span id="current-game-display"></span>
+        <button onclick="nextGame()">Next Game</button>
+    </div>
+
     <div id="trick-navigation">
         <button onclick="prevTrick()">Previous Trick</button>
         <span id="current-trick-display"></span>
