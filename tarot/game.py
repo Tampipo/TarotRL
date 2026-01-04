@@ -38,6 +38,7 @@ class TarotGame:
             "dealer": self.dealer.name,
             "initial_hands": {},
             "bid_phase": {"bids": []},
+            "call_phase": {},
             "chien": [],
             "discard_phase": {},
             "tricks": [],
@@ -117,7 +118,12 @@ class TarotGame:
             else:
                 if player != self.taker:
                     self.team2.add_player(player)
-
+        self.game_log["call_phase"] = {
+            "taker": self.taker.name,
+            "called_suit": str(called_suit),
+            "team1": [player.name for player in self.team1],
+            "team2": [player.name for player in self.team2]
+        }
         print(f"Team 1: {self.team1}")
         print(f"Team 2: {self.team2}")
 
