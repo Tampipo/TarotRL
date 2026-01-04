@@ -30,6 +30,7 @@ class TarotGame:
         self.history = []
         self.leading = self.players[(dealer + 1) % self.num_players].name
         self.rule_engine = RuleEngine()
+        self.final_score = 0
         print(f"Starting Tarot game with players: {[player.name for player in players]}")
 
         self.game_log = {
@@ -79,16 +80,16 @@ class TarotGame:
         difference = team1_score - required_points
         
         if difference >= 0:
-            final_score = 25 + difference
+            self.final_score = 25 + difference
         else:
-            final_score = -25 + difference
+            self.final_score = -25 + difference
 
         print(f"Team 1 score: {team1_score}")
         print(f"Team 2 score: {team2_score}")
         print(f"Oudlers team1: {oudlers_team1}")
         print(f"Required points: {required_points}")
         print(f"Difference: {difference}")
-        print(f"Final score: {final_score}")
+        print(f"Final score: {self.final_score}")
 
         self.game_log["final_scores"] = {
             "team1_score": team1_score,
@@ -96,10 +97,8 @@ class TarotGame:
             "oudlers_team1": oudlers_team1,
             "required_points": required_points,
             "difference": difference,
-            "final_score": final_score
+            "final_score": self.final_score
         }
-
-        return final_score
 
     def get_game_data(self):
         return self.game_log
@@ -188,11 +187,10 @@ class TarotGame:
         self.bidding_phase()
         if not self.taker:
             print("No taker was selected. Ending game.")
-            return self.finalize()
+            return
         if self.num_players == 5:
             self.call()
         self.discard_phase()
-        k=0
         while len(self.players[0].hand) > 0:
             self.play_trick()
         
